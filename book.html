@@ -147,7 +147,7 @@ function renderHome() {
   const last = exst.get('gpos', null);
   let r = '';
   if (last && D.groups[last.g]) { const u = D.groups[last.g].units.find(x => x.id === last.id); if (u) r = `<a class="res" href="#g${last.g}/${esc(last.id)}"><i>▶️</i>이어서 보기 · ${esc(u.label)}<em>›</em></a>`; }
-  if (D.ainca) r += `<a class="res" href="${esc(D.ainca)}"><i>📑</i>지문분석 아잉카 보기<em>›</em></a>`;
+  if (D.ainca) r += `<a class="res" href="${esc(D.ainca)}"><i>📑</i>지문분석 보기<em>›</em></a>`;
   const cards = D.groups.map((g, i) => { const h = HUE[i % HUE.length]; return `<a class="gc" href="#g${i}" style="background:linear-gradient(130deg,${h[0]},${h[1]})"><b>${esc(g.name)}</b><span>${g.units.length}지문 한 번에 보기</span></a>`; }).join('');
   $('#app').innerHTML = `<div class="hero"><small>${esc(D.school)}</small><h1>${esc(D.short)}</h1><p>${esc(D.sub)}</p></div><div class="home">${r}<div class="hh">단원을 고르세요</div><div class="gg">${cards}</div></div>`;
 }
